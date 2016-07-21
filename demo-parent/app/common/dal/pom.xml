@@ -7,9 +7,7 @@
     <artifactId>demo-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.yixiu.demo</groupId>
   <artifactId>demo-common-dal</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>demo-common-dal</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -22,5 +20,18 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>com.yixiu.demo</groupId>
+    	<artifactId>demo-common</artifactId>
+    </dependency>
   </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>com.yixiu.demo</groupId>
+  			<artifactId>demo-common</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>

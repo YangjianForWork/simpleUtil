@@ -18,7 +18,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-    <module>demo-common</module>
-    <module>demo-common-dal</module>
+    <module>app/common/default</module>
+    <module>app/common/dal</module>
   </modules>
 </project>
