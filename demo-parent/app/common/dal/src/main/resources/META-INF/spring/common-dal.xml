@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	classpath:/org/springframework/factory/xml/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	classpath:/org/springframework/factory/xml/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context
+    classpath:/org/springframework/factory/xml/spring-context-3.0.xsd
+	http://www.springframework.org/schema/mvc
+    classpath:/org/springframework/factory/xml/spring-mvc-3.0.xsd"
+	default-autowire="byName">
+	
+	<!-- 数据源 ,DBCP连接池 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="${themall.database.url}" />
+		<property name="username" value="${themall.database.username}" />
+		<property name="password" value="${themall.database.password}" />
+		<property name="initialSize" value="${themall.database.initialSize}" />
+		<property name="maxTotal" value="${themall.database.maxTotal}" />
+		<property name="maxIdle" value="${themall.database.maxIdle}" />
+		<property name="maxWaitMillis" value="${themall.database.maxWaitMillis}" />
+		<property name="poolPreparedStatements" value="true" />
+	</bean>
+  
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocations">
+			<list>
+				<value>classpath:/META-INF/sqlmap/sqlmap.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false" />
+
+	<!-- 事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="transactionNewTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="propagationBehavior" value="3" />
+	</bean>
+	
+	<bean id="configService"
+		class="com.yixiu.themall.common.ConfigService">
+		<property name="homeDomain" value="${themall.home.domain}" />
+		<property name="homePort" value="${themall.home.port}" />
+		<property name="homeProtocol" value="${themall.home.protocol}" />
+		<property name="shortDomain" value="${themall.home.shotdomain}" />
+		<property name="envStr" value="${themall.env}" />
+	</bean>
+</beans>
