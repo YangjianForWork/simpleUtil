@@ -19,5 +19,6 @@
   </properties>
   <modules>
     <module>demo-common</module>
+    <module>demo-common-dal</module>
   </modules>
 </project>
