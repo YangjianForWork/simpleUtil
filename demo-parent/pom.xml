@@ -1,28 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.yixiu.demo</groupId>
-  <artifactId>demo-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<groupId>com.yixiu.demo</groupId>
+	<artifactId>demo-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>scp://webhost.company.com/www/website</url>
-    </site>
-  </distributionManagement>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <modules>
-    <module>app/common/default</module>
-    <module>app/common/dal</module>
-    <module>app/core/service</module>
-    <module>app/core/shared</module>
-    <module>app/biz/prod</module>
-    <module>app/biz/shared</module>
-  </modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+			</dependency>
+			<!-- 子工程 开始 -->
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-common-dal</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-core-service</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-core-shared</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-parent</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-biz-shared</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-biz-prod</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yixiu.demo</groupId>
+				<artifactId>demo-web-shared</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 子工程 结束 -->
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>app/common/default</module>
+		<module>app/common/dal</module>
+		<module>app/core/service</module>
+		<module>app/core/shared</module>
+		<module>app/biz/prod</module>
+		<module>app/biz/shared</module>
+		<module>app/web/shared</module>
+	</modules>
 </project>

@@ -1,6 +1,6 @@
 package org.demo.common;
 
-public class Bpp {
+public class Bpps {
     private String name;
 
     public String getName() {

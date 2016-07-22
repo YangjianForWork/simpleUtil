@@ -7,8 +7,8 @@
     <artifactId>demo-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>demo-biz-shared</artifactId>
-  <name>demo-biz-shared</name>
+  <artifactId>demo-web-shared</artifactId>
+  <name>demo-web-shared</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,7 +16,7 @@
   <dependencies>
   	<dependency>
   		<groupId>com.yixiu.demo</groupId>
-  		<artifactId>demo-core-service</artifactId>
+  		<artifactId>demo-biz-prod</artifactId>
   	</dependency>
   </dependencies>
 </project>
