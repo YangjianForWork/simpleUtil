@@ -22,5 +22,7 @@
     <module>app/common/dal</module>
     <module>app/core/service</module>
     <module>app/core/shared</module>
+    <module>app/biz/prod</module>
+    <module>app/biz/shared</module>
   </modules>
 </project>
