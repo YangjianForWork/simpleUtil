@@ -20,5 +20,7 @@
   <modules>
     <module>app/common/default</module>
     <module>app/common/dal</module>
+    <module>app/core/service</module>
+    <module>app/core/shared</module>
   </modules>
 </project>
