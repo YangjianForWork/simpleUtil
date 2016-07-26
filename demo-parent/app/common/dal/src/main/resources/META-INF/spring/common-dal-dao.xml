@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	classpath:/org/springframework/factory/xml/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	classpath:/org/springframework/factory/xml/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context
+    classpath:/org/springframework/factory/xml/spring-context-3.0.xsd
+	http://www.springframework.org/schema/mvc
+    classpath:/org/springframework/factory/xml/spring-mvc-3.0.xsd"
+	default-autowire="byName">
+
+	<bean id="attrValueDAO" class="com.yixiu.themall.common.dal.ibatis.IbatisAttrValueDAO" />
+
+	<bean id="sequenceGenerate" class="com.yixiu.themall.common.dal.SequenceGenerate">
+		<property name="executor">
+			<bean
+				class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+				<property name="corePoolSize" value="10" />
+				<property name="keepAliveSeconds" value="5" />
+				<property name="maxPoolSize" value="10" />
+				<property name="queueCapacity" value="10" />
+				<property name="threadNamePrefix" value="sequenceGenerate" />
+			</bean>
+		</property>
+	</bean>
+</beans>
