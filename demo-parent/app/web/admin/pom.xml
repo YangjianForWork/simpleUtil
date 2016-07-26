@@ -7,24 +7,17 @@
     <artifactId>demo-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>demo-common</artifactId>
-  <name>demo-common</name>
+  <artifactId>demo-web-admin</artifactId>
+  <packaging>war</packaging>
+  <name>demo-web-admin Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <build>
+    <finalName>demo-web-admin</finalName>
+  </build>
   <dependencies>
   	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>javax.servlet</groupId>
-  		<artifactId>servlet-api</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>javax.servlet.jsp.jstl</groupId>
-  		<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+  		<groupId>com.yixiu.demo</groupId>
+  		<artifactId>demo-biz-shared</artifactId>
   	</dependency>
   </dependencies>
 </project>

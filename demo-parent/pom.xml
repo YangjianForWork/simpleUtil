@@ -19,6 +19,17 @@
 				<artifactId>junit</artifactId>
 				<version>4.11</version>
 			</dependency>
+			<!-- servlet  -->
+			<dependency>
+				<groupId>javax.servlet.jsp.jstl</groupId>
+				<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+				<version>1.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+			</dependency>
 			<!-- 子工程 开始 -->
 			<dependency>
 				<groupId>com.yixiu.demo</groupId>
@@ -73,5 +84,6 @@
 		<module>app/biz/prod</module>
 		<module>app/biz/shared</module>
 		<module>app/web/shared</module>
+		<module>app/web/admin</module>
 	</modules>
 </project>

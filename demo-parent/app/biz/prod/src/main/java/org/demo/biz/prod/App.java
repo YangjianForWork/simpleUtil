@@ -1,17 +1,14 @@
 package org.demo.biz.prod;
 
-import org.demo.core.shared.Bpp;
-
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws ClassNotFoundException, InstantiationException, IllegalAccessException
     {
         System.out.println( "Hello World!" );
-        Bpp bpp = new Bpp();
-        bpp.setName("sd");
+        
     }
 }

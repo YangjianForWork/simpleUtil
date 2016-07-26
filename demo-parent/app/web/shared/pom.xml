@@ -18,5 +18,13 @@
   		<groupId>com.yixiu.demo</groupId>
   		<artifactId>demo-biz-prod</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet.jsp.jstl</groupId>
+  		<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>servlet-api</artifactId>
+  	</dependency>
   </dependencies>
 </project>
